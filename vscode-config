@@ -1,0 +1,51 @@
+{
+    "workbench.colorTheme": "Community Material Theme Darker",
+    "explorer.confirmDelete": false,
+    "git.autofetch": true,
+    "http.proxy": "http://127.0.0.1:8118",
+    "[python]": {
+        "python.jediEnabled": false,
+        "python.languageServer": "Microsoft",
+    },
+    "files.exclude": {
+        "**/.idea": true,
+        "**/.pytest_cache": true,
+        "**/__pycache__": true,
+        "**/venv": true
+    },
+    
+    "vim.easymotion": true,
+    "vim.incsearch": true,
+    "vim.useSystemClipboard": true,
+    "vim.useCtrlKeys": true,
+    "vim.hlsearch": true,
+    "vim.insertModeKeyBindings": [
+      {
+        "before": ["j", "j"],
+        "after": ["<Esc>"]
+      },
+      {
+        "before": ["<C-l>"],
+        "after": ["<Esc>", "l", "a"]
+      },
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+      {
+          "before": ["Z", "Z"],
+          "commands": [
+              ":wq"
+          ]
+      },
+      {
+        "before": ["Z", "Q"],
+        "commands": [
+          ":q"
+        ]
+      }
+  ],
+    "vim.leader": "<space>",
+    "vim.handleKeys": {
+      "<C-a>": false,
+      "<C-f>": false
+    }
+}
