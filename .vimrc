@@ -3,7 +3,8 @@ syntax on
 set number
 
 call plug#begin()
-Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 Plug 'preservim/nerdtree'
 Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'dense-analysis/ale'
@@ -13,6 +14,7 @@ call plug#end()
 
 " coc config
 nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gr <Plug>(coc-references)
 
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 function! s:show_documentation()
@@ -26,7 +28,6 @@ endfunction
 nmap gn <Plug>(coc-rename)
 
 
-set statusline^=%{coc#status()}
 
 " custom
 inoremap <C-l> <C-c>la
@@ -41,7 +42,7 @@ set backspace=indent,eol,start
 
 
 let mapleader=" "
-nnoremap <leader>vc :vsplit $MYVIMRC<cr>
+nnoremap <leader>vc :tabnew $MYVIMRC<cr>
 nnoremap <leader>vs :source $MYVIMRC<cr>
 nnoremap <leader>s :update<cr>
 
@@ -73,3 +74,12 @@ augroup BgHighlight
     autocmd WinEnter * set number
     autocmd WinLeave * set nonumber
 augroup END
+
+
+noremap <leader>b :NERDTreeToggle<CR>
+noremap <leader>p :CtrlP ./<CR>
+
+
+" add yaml stuffs
+au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
